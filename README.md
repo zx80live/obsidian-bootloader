@@ -11,7 +11,7 @@ mkdir $VAULT_DIR/_boot
 
 cd $VAULT_DIR/.obsidian/plugins
 
-git clone git@github.com:zx80live/obsidian-bootloader.git bootloader
+git clone https://github.com/zx80live/obsidian-bootloader.git bootloader
 ```
 
 2. Force reload or restart Obsidian
@@ -19,6 +19,8 @@ git clone git@github.com:zx80live/obsidian-bootloader.git bootloader
 
 
 ## Usage
+
+### Create library for obsidian
 Create your javascript file in `_boot` folder:
 ```java
 // _boot/util.js
@@ -35,6 +37,13 @@ module.exports = {Util, msg}
 ```
 
 And then restart Obsidian or execute command: `View` -> `Force reload`
+
+### Use imported libs
+All exported objects are contained in `libs` object. Place the following script to `dataviewjs` block:
+```java
+const util = new libs.Util
+const msg = libs.msg
+```
 
 ## Logs
 1. `View` -> `Toggle developer tools`
