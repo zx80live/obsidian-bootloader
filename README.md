@@ -16,6 +16,7 @@ git clone https://github.com/zx80live/obsidian-bootloader.git bootloader
 
 2. Force reload or restart Obsidian
 3. Enable plugin: `Settings` -> `Community plugins` -> enable `BootLoader`
+4. Enable Javascript in Dataview plugin
 
 
 ## Usage
