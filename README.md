@@ -5,6 +5,8 @@
 # define your vault dir
 VAULT_DIR=~/vault
 
+mkdir $VAULT_DIR/_boot
+
 cd $VAULT_DIR/.obsidian/plugins
 
 git clone git@github.com:zx80live/obsidian-bootloader.git bootloader
