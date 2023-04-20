@@ -1,6 +1,8 @@
 # Obsidian BootLoader
 
 ## Install
+
+1. Execute script:
 ```bash
 # define your vault dir
 VAULT_DIR=~/vault
@@ -11,7 +13,9 @@ cd $VAULT_DIR/.obsidian/plugins
 
 git clone git@github.com:zx80live/obsidian-bootloader.git bootloader
 ```
-And then force reload or restart Obsidian.
+
+2. Force reload or restart Obsidian
+3. Enable plugin: `Settings` -> `Community plugins` -> enable `BootLoader`
 
 
 ## Usage
