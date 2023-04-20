@@ -1,0 +1,9 @@
+{
+  "id": "bootloader",
+  "name": "BootLoader",
+  "version": "1.0.0",
+  "description": "Boot loader",
+  "author": "zx80live",
+  "authorUrl": "https://github.com/zx80live",
+  "isDesktopOnly": true
+}
