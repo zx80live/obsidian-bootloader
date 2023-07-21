@@ -35,7 +35,16 @@ class BootLoader extends obsidian.Plugin {
       }
 
       files.forEach(f => {
-        window.libs = {...window.libs, ...lib(f)}
+	const loaded = lib(f)
+        Object.values(loaded).forEach(l => {
+          Object.keys(l).forEach(m => {
+            if(m == 'onLoad') {
+	      l.onLoad(obsidian)
+	      return
+	    }
+	  })
+	})
+        window.libs = {...window.libs, ...loaded}
         console.log("BootLoader: load lib", f)
       })
     })
