@@ -35,7 +35,11 @@ class BootLoader extends obsidian.Plugin {
       }
 
       files.forEach(f => {
-	const loaded = lib(f)
+        if(fs.lstatSync(libsDir + '/' + f).isDirectory()) {
+          console.log('bootloader: skip dir', f)
+          return
+        }
+	    const loaded = lib(f)
         Object.values(loaded).forEach(l => {
           Object.keys(l).forEach(m => {
             if(m == 'onLoad') {
