@@ -3,7 +3,6 @@
 var obsidian = require('obsidian')
 
 const rootDir = app.vault.adapter.basePath
-const commonLibsDir = rootDir + '/.obsidian/plugins/bootloader/_boot'
 const libsDir = rootDir + '/_boot'
 
 class BootLoader extends obsidian.Plugin {
@@ -21,8 +20,7 @@ class BootLoader extends obsidian.Plugin {
   async onload() {
     const self = this
     self.app.workspace.onLayoutReady(() => {
-      self.loadLibs(commonLibsDir)
-      self.loadLibs(libsDir)
+      return self.loadLibs(libsDir)
     })
   }
 
