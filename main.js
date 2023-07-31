@@ -10,9 +10,9 @@ class BootLoader extends obsidian.Plugin {
   constructor() {
     super(...arguments)
 
-    window.lib = (name) => {
+    window.lib = (path) => {
       const f = name.endsWith('.js') ? name : name + '.js'
-      return require(libsDir + '/' + f)
+      return require(path)
     }
     window.libs = {}
     console.log("BootLoader is started..")
@@ -37,11 +37,12 @@ class BootLoader extends obsidian.Plugin {
       }
 
       files.forEach(f => {
-        if(fs.lstatSync(dir + '/' + f).isDirectory()) {
-          console.log('bootloader: skip dir', f)
+        const path = dir + '/' + f
+        if(fs.lstatSync(path).isDirectory()) {
+          console.log('bootloader: skip dir', path)
           return
         }
-	    const loaded = lib(f)
+	    const loaded = lib(path)
         Object.values(loaded).forEach(l => {
           Object.keys(l).forEach(m => {
             if(m == 'onLoad') {
@@ -51,7 +52,7 @@ class BootLoader extends obsidian.Plugin {
 	      })
 	    })
         window.libs = {...window.libs, ...loaded}
-        console.log("BootLoader: load lib", f)
+        console.log("BootLoader: load lib", path)
       })
     })
   }
