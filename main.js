@@ -1,7 +1,5 @@
 'use strict';
 
-var obsidian = require('obsidian')
-
 const rootDir = app.vault.adapter.basePath
 const libsDir = rootDir + '/_boot'
 
@@ -44,7 +42,7 @@ class BootLoader extends obsidian.Plugin {
         Object.values(loaded).forEach(l => {
           Object.keys(l).forEach(m => {
             if(m == 'onLoad') {
-	          l.onLoad(obsidian)
+	          l.onLoad(app)
 	          return
 	        }
 	      })
