@@ -1,5 +1,7 @@
 'use strict';
 
+var obsidian = require('obsidian')
+
 const rootDir = app.vault.adapter.basePath
 const libsDir = rootDir + '/_boot'
 
