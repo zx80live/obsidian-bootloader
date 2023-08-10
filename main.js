@@ -18,7 +18,6 @@ class BootLoader extends obsidian.Plugin {
   }
 
   async onload() {
-    console.log('ON_LOAD', this)
     const self = this
     self.app.workspace.onLayoutReady(() => {
       return self.loadLibs(libsDir)
