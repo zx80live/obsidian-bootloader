@@ -42,6 +42,8 @@ class BootLoader extends obsidian.Plugin {
         }
 	    const loaded = lib(path)
         Object.values(loaded).forEach(l => {
+          l.app = app
+          l.obsidian = obsidian
           Object.keys(l).forEach(m => {
             if(m == 'onLoad') {
 	          l.onLoad(app, obsidian)
