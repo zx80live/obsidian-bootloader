@@ -44,7 +44,7 @@ class BootLoader extends obsidian.Plugin {
         Object.values(loaded).forEach(l => {
           Object.keys(l).forEach(m => {
             if(m == 'onLoad') {
-	          l.onLoad(app)
+	          l.onLoad(app, obsidian)
 	          return
 	        }
 	      })
