@@ -29,9 +29,6 @@ Create your javascript file in `_boot` folder:
 
 // 1. define your classes and constants
 class Util {
-  onLoad(app, obsidian) { // this optional callback will be executed automatically
-    ... 
-  }
 }
 
 const msg = "Hello"
