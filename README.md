@@ -2,6 +2,7 @@
 
 ## Install
 
+
 1. Execute script:
 ```bash
 # define your vault dir
